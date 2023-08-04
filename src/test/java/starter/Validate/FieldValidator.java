@@ -3,8 +3,6 @@ package starter.Validate;
 import net.serenitybdd.core.Serenity;
 import org.openqa.selenium.WebElement;
 
-import static net.serenitybdd.core.Serenity.getDriver;
-
 public class FieldValidator {
 
     public void validateName(WebElement campo, String enteredValue) {
@@ -58,5 +56,9 @@ public class FieldValidator {
             Serenity.recordReportData().withTitle("Validación de campo").andContents("El campo no contiene un valor numérico válido.");
             throw new AssertionError("El campo no contiene un valor numérico válido.");
         }
+    }
+
+    public boolean esAnioValido(int anio) {
+        return anio >= 2010 && anio <= 2100; // Puedes ajustar los límites según tus necesidades
     }
 }

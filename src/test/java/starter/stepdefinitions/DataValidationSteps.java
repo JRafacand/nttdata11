@@ -1,8 +1,9 @@
 package starter.stepdefinitions;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.core.Serenity;
+import net.serenitybdd.screenplay.Actor;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -56,19 +57,17 @@ public class DataValidationSteps {
       driver1.findElement(By.xpath("//input[@id='month']")).sendKeys("Abril");
 
     }
-    @Then("{actor} Valido año {int}")
+    @Then("{actor} Valido anio {int}")
     public void ingresoValorEnCampoAnio(Actor actor, int valor) {
-        if (esAnioValido(valor)) {
+        if (fieldValidator.esAnioValido(valor)) {
             Serenity.recordReportData().withTitle("Validación de campo").andContents("El campo contiene un Años Válido.");
         } else {
             Serenity.recordReportData().withTitle("Validación de campo").andContents("El campo no es un Año válido.");
             throw new AssertionError("El campo no es un Año válido.");
         }
-    }
+     }
     // Método para validar si un año es válido (por ejemplo, entre 2010 y 2100)
-    private boolean esAnioValido(int anio) {
-        return anio >= 2010 && anio <= 2100; // Puedes ajustar los límites según tus necesidades
-    }
+
     @Then("{actor} Finalizar Compra")
     public void endBuy(Actor actor) throws InterruptedException {
         driver1.findElement(By.xpath("//button[contains(text(),'Purchase')]")).click();

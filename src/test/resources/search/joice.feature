@@ -12,7 +12,7 @@ Feature: Elegir Productos DemoBlaze
     Then he Valido ingreso city "Quito"
     Then he valido ingreso tarjeta "9876-5432-1098-7654"
     Then he Ingreso Mes
-    Then he Valido año 2023
+    Then he Valido anio 2023
     Then he Finalizar Compra
     Then he navigate demoblaze back
 

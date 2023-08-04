@@ -1,13 +1,13 @@
 package starter.stepdefinitions;
+
 import io.cucumber.java.en.And;
-import org.openqa.selenium.Alert;
-import io.cucumber.java.en.Then;
 import io.cucumber.java.en.Given;
 import net.serenitybdd.screenplay.Actor;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import starter.navigation.NavigateTo;
+
 import static net.serenitybdd.core.Serenity.getDriver;
 
 
