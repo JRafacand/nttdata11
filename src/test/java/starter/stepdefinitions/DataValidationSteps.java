@@ -59,7 +59,8 @@ public class DataValidationSteps {
     }
     @Then("{actor} Valido anio {int}")
     public void ingresoValorEnCampoAnio(Actor actor, int valor) {
-        if (fieldValidator.esAnioValido(valor)) {
+       driver1.findElement(By.xpath("//input[@id='year']")).sendKeys(Integer.toString(valor));
+       if (fieldValidator.esAnioValido(valor)) {
             Serenity.recordReportData().withTitle("Validación de campo").andContents("El campo contiene un Años Válido.");
         } else {
             Serenity.recordReportData().withTitle("Validación de campo").andContents("El campo no es un Año válido.");
